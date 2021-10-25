@@ -8,21 +8,54 @@ class QuizPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    context.read<QuizCubit>().start();
-
     return BlocBuilder<QuizCubit, QuizState>(
       builder: (context, state) {
         debugPrint('$state');
+        Widget? child;
+
+        if (state is InitialState) {
+          context.read<QuizCubit>().start();
+        }
 
         if (state is LoadingState) {
-          return const Center(
+          child = const Center(
             child: CircularProgressIndicator(),
           );
         }
 
+        if (state is LoadedState) {
+          child = Column(
+            children: [
+              Text(state.displayQuestion.description),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: state.displayQuestion.options.length,
+                  itemBuilder: (_, id) {
+                    return ElevatedButton(
+                      onPressed: () => context
+                          .read<QuizCubit>()
+                          .answer(state.displayQuestion.options[id]),
+                      child: Text(
+                        state.displayQuestion.options[id],
+                      ),
+                    );
+                  },
+                ),
+              )
+            ],
+          );
+        }
+
         if (state is ErrorState) {
-          return Center(
+          child = Center(
             child: Text(state.message),
+          );
+        }
+
+        if (state is FinishedState) {
+          child = Center(
+            child: Text(
+                '${state.quiz.result!.percentage}: ${state.quiz.result!.message}'),
           );
         }
 
@@ -30,8 +63,8 @@ class QuizPage extends StatelessWidget {
           appBar: AppBar(
             title: const Text('Quiz'),
           ),
-          body: const Center(
-            child: Text('Quiz!'),
+          body: Center(
+            child: child,
           ),
         );
       },

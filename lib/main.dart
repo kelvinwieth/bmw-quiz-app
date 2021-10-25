@@ -20,7 +20,7 @@ class BMWQuizApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => QuizCubit(repository: repository),
+      create: (_) => QuizCubit(repository: repository),
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: QuizPage(),

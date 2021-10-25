@@ -18,7 +18,7 @@ class LoadedState extends QuizState {
   LoadedState({required this.quiz, required this.displayQuestion});
 
   @override
-  List<Object?> get props => super.props + [quiz];
+  List<Object?> get props => super.props + [quiz, displayQuestion];
 }
 
 class FinishedState extends QuizState {

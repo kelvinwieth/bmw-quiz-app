@@ -8,7 +8,7 @@ class ResultResponse {
 
   factory ResultResponse.fromMap(Map<String, dynamic> map) {
     return ResultResponse(
-      percentage: map['percentage'],
+      percentage: map['percentage'].toDouble(),
       message: map['message'],
     );
   }
