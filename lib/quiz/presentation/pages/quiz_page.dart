@@ -1,5 +1,7 @@
-import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_bloc.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_cubit.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_state.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/views/question_view.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/views/result_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -10,7 +12,6 @@ class QuizPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<QuizCubit, QuizState>(
       builder: (context, state) {
-        debugPrint('$state');
         Widget? child;
 
         if (state is InitialState) {
@@ -24,26 +25,7 @@ class QuizPage extends StatelessWidget {
         }
 
         if (state is LoadedState) {
-          child = Column(
-            children: [
-              Text(state.displayQuestion.description),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: state.displayQuestion.options.length,
-                  itemBuilder: (_, id) {
-                    return ElevatedButton(
-                      onPressed: () => context
-                          .read<QuizCubit>()
-                          .answer(state.displayQuestion.options[id]),
-                      child: Text(
-                        state.displayQuestion.options[id],
-                      ),
-                    );
-                  },
-                ),
-              )
-            ],
-          );
+          child = QuestionView(question: state.displayQuestion);
         }
 
         if (state is ErrorState) {
@@ -53,10 +35,7 @@ class QuizPage extends StatelessWidget {
         }
 
         if (state is FinishedState) {
-          child = Center(
-            child: Text(
-                '${state.quiz.result!.percentage}: ${state.quiz.result!.message}'),
-          );
+          child = ResultView(result: state.quiz.result!);
         }
 
         return Scaffold(
