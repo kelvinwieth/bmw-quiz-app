@@ -22,9 +22,9 @@ class QuestionOptionButton extends StatelessWidget {
           option,
           style: GoogleFonts.exo(
             textStyle: const TextStyle(
-              fontSize: 30,
+              fontSize: 22,
               color: Colors.black,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w400,
               fontStyle: FontStyle.italic,
             ),
           ),
