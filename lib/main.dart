@@ -1,4 +1,4 @@
-import 'package:bmw_quiz_flutter/quiz/presentation/pages/quiz_page.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/pages/quiz/quiz_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

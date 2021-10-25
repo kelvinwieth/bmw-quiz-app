@@ -6,7 +6,7 @@ import 'package:bmw_quiz_flutter/quiz/infra/datasources/dtos/result_response.dar
 import 'package:http/http.dart' as http;
 
 class QuizApi {
-  var baseUrl = 'https://localhost:5001/api/Quiz';
+  var baseUrl = 'https://10.0.2.2:5001/api/Quiz';
   var client = http.Client();
 
   Future<List<QuestionResponse>> getQuestionsAsync() async {
