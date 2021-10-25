@@ -7,5 +7,5 @@ class FinishQuiz {
 
   FinishQuiz({required this.quiz, required this.repository});
 
-  void execute() async => quiz.result = await repository.getResultAsync(quiz);
+  Future execute() async => quiz.result = await repository.getResultAsync(quiz);
 }
