@@ -1,8 +1,6 @@
-import 'package:equatable/equatable.dart';
-
-class Question extends Equatable {
-  String description;
-  List<String> options;
+class Question {
+  final String description;
+  final List<String> options;
   String? _attempt;
 
   Question({required this.description, required this.options});
@@ -20,7 +18,4 @@ class Question extends Equatable {
   bool get isAnswered => _attempt != null;
 
   bool get isNotAnswered => !isAnswered;
-
-  @override
-  List<Object?> get props => [description, options, _attempt];
 }
