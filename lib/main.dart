@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:bmw_quiz_flutter/quiz/infra/repositories/quiz_repository.dart';
-import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_bloc.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_cubit.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/pages/quiz_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
