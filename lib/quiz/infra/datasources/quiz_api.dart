@@ -7,29 +7,20 @@ import 'package:http/http.dart' as http;
 
 class QuizApi {
   var baseUrl = 'https://10.0.2.2:5001/api/Quiz';
-  var client = http.Client();
 
   Future<List<QuestionResponse>> getQuestionsAsync() async {
-    try {
-      var url = Uri.parse(baseUrl);
-      var response = await client.get(url);
+    var url = Uri.parse(baseUrl);
+    var response = await http.get(url);
 
-      var decodedBody = jsonDecode(response.body) as List<Map<String, dynamic>>;
+    var decodedBody = jsonDecode(response.body) as List;
 
-      return decodedBody.map((item) => QuestionResponse.fromMap(item)).toList();
-    } finally {
-      client.close();
-    }
+    return decodedBody.map((item) => QuestionResponse.fromMap(item)).toList();
   }
 
   Future<ResultResponse> getResultAsync(ResultRequest request) async {
-    try {
-      var url = Uri.parse(baseUrl);
-      var response = await client.post(url, body: request.toMap());
+    var url = Uri.parse(baseUrl);
+    var response = await http.post(url, body: request.toMap());
 
-      return ResultResponse.fromJson(response.body);
-    } finally {
-      client.close();
-    }
+    return ResultResponse.fromJson(response.body);
   }
 }

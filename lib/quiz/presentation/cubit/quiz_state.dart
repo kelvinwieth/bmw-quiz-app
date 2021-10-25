@@ -31,5 +31,7 @@ class FinishedState extends QuizState {
 }
 
 class ErrorState extends QuizState {
-  final String message = 'Erro ao iniciar quiz. Tente novamente.';
+  final String message;
+
+  ErrorState(Object e) : message = '$e';
 }

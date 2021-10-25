@@ -3,17 +3,15 @@ import 'package:bmw_quiz_flutter/quiz/domain/usecases/answerquestion.dart';
 import 'package:bmw_quiz_flutter/quiz/domain/usecases/finishquiz.dart';
 import 'package:bmw_quiz_flutter/quiz/domain/usecases/getactualquestion.dart';
 import 'package:bmw_quiz_flutter/quiz/domain/usecases/startquiz.dart';
-import 'package:bmw_quiz_flutter/quiz/presentation/pages/cubit/quiz_state.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class QuizCubit extends Cubit<QuizState> {
   IQuizRepository repository;
 
-  QuizCubit({required this.repository}) : super(InitialState()) {
-    _start();
-  }
+  QuizCubit({required this.repository}) : super(InitialState());
 
-  void _start() async {
+  void start() async {
     try {
       emit(LoadingState());
 
@@ -22,7 +20,7 @@ class QuizCubit extends Cubit<QuizState> {
 
       emit(LoadedState(quiz: quiz, displayQuestion: displayQuestion!));
     } catch (e) {
-      emit(ErrorState());
+      emit(ErrorState(e));
     }
   }
 
@@ -37,7 +35,7 @@ class QuizCubit extends Cubit<QuizState> {
 
       emit(LoadedState(quiz: quiz, displayQuestion: displayQuestion!));
     } catch (e) {
-      emit(ErrorState());
+      emit(ErrorState(e));
     }
   }
 
@@ -48,7 +46,7 @@ class QuizCubit extends Cubit<QuizState> {
 
       _nextQuestion();
     } catch (e) {
-      emit(ErrorState());
+      emit(ErrorState(e));
     }
   }
 
@@ -60,7 +58,7 @@ class QuizCubit extends Cubit<QuizState> {
 
       emit(FinishedState(quiz: quiz));
     } catch (e) {
-      emit(ErrorState());
+      emit(ErrorState(e));
     }
   }
 }
