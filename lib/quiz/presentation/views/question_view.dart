@@ -1,6 +1,7 @@
 import 'package:bmw_quiz_flutter/quiz/domain/entities/question.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_cubit.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_state.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/widgets/question_option_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -21,9 +22,9 @@ class QuestionView extends StatelessWidget {
                 itemBuilder: (_, index) {
                   String option = question.options[index];
 
-                  return ElevatedButton(
+                  return QuestionOptionButton(
                     onPressed: () => context.read<QuizCubit>().answer(option),
-                    child: Text(option),
+                    option: option,
                   );
                 },
               ),
