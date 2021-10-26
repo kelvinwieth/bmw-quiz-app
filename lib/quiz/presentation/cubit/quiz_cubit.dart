@@ -4,7 +4,6 @@ import 'package:bmw_quiz_flutter/quiz/domain/usecases/finishquiz.dart';
 import 'package:bmw_quiz_flutter/quiz/domain/usecases/getactualquestion.dart';
 import 'package:bmw_quiz_flutter/quiz/domain/usecases/startquiz.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_state.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class QuizCubit extends Cubit<QuizState> {
