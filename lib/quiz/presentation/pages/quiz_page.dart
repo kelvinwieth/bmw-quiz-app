@@ -47,6 +47,15 @@ class QuizPage extends StatelessWidget {
           body: Container(
             alignment: Alignment.center,
             child: child,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                  image: const AssetImage('images/bmw.jpg'),
+                  fit: BoxFit.cover,
+                  colorFilter: ColorFilter.mode(
+                    Colors.white.withOpacity(0.15),
+                    BlendMode.dstATop,
+                  )),
+            ),
           ),
         );
       },
