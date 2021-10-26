@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuizStyles {
-  final resultMessageTextStyle = GoogleFonts.exo(
+  static final resultMessageTextStyle = GoogleFonts.exo(
     textStyle: const TextStyle(
       fontSize: 40,
       color: Colors.black,
@@ -11,7 +11,7 @@ class QuizStyles {
     ),
   );
 
-  final optionButtonTextStyle = GoogleFonts.exo(
+  static final optionButtonTextStyle = GoogleFonts.exo(
     textStyle: const TextStyle(
       fontSize: 22,
       color: Colors.black,
@@ -19,7 +19,7 @@ class QuizStyles {
     ),
   );
 
-  final resultPercentageTextStyle = GoogleFonts.exo(
+  static final resultPercentageTextStyle = GoogleFonts.exo(
     textStyle: const TextStyle(
       fontSize: 60,
       color: Colors.black,
@@ -27,7 +27,7 @@ class QuizStyles {
     ),
   );
 
-  final restartTextStyle = GoogleFonts.exo(
+  static final restartTextStyle = GoogleFonts.exo(
     textStyle: const TextStyle(
       fontSize: 25,
       color: Colors.white,
@@ -35,7 +35,7 @@ class QuizStyles {
     ),
   );
 
-  final quizAppBar = AppBar(
+  static final quizAppBar = AppBar(
     backgroundColor: Colors.white.withOpacity(0.5),
     centerTitle: true,
     title: Text(
@@ -50,8 +50,8 @@ class QuizStyles {
     ),
   );
 
-  final questionOptionButtonStyle = ElevatedButton.styleFrom(
-    primary: Colors.white.withOpacity(0.5),
+  static final questionOptionButtonStyle = ElevatedButton.styleFrom(
+    primary: Colors.grey.shade200.withOpacity(0.9),
     padding: const EdgeInsets.all(12),
     elevation: 0,
   );

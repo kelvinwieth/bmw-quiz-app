@@ -24,10 +24,10 @@ class ResultView extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
               child: Text(
                 'Reiniciar',
-                style: QuizStyles().optionButtonTextStyle,
+                style: QuizStyles.optionButtonTextStyle,
               ),
             ),
-            style: QuizStyles().questionOptionButtonStyle,
+            style: QuizStyles.questionOptionButtonStyle,
           ),
         ],
       ),

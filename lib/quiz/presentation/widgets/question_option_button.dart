@@ -20,9 +20,9 @@ class QuestionOptionButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           option,
-          style: QuizStyles().optionButtonTextStyle,
+          style: QuizStyles.optionButtonTextStyle,
         ),
-        style: QuizStyles().questionOptionButtonStyle,
+        style: QuizStyles.questionOptionButtonStyle,
       ),
     );
   }

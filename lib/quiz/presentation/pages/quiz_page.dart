@@ -44,16 +44,16 @@ class QuizPage extends StatelessWidget {
         }
 
         return Scaffold(
-          appBar: QuizStyles().quizAppBar,
+          appBar: QuizStyles.quizAppBar,
           body: Container(
             alignment: Alignment.center,
             child: child,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: const AssetImage('images/bmw2.jpg'),
+                  image: const AssetImage('images/bmw3.jpg'),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
-                    Colors.white.withOpacity(0.3),
+                    Colors.white.withOpacity(0.2),
                     BlendMode.dstATop,
                   )),
             ),
