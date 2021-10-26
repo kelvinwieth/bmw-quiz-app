@@ -1,5 +1,6 @@
 import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_cubit.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_state.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/styles/quiz_styles.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/views/question_view.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/views/result_view.dart';
 import 'package:flutter/material.dart';
@@ -42,10 +43,9 @@ class QuizPage extends StatelessWidget {
         }
 
         return Scaffold(
-          appBar: AppBar(
-            title: const Text('Quiz'),
-          ),
-          body: Center(
+          appBar: QuizStyles().quizAppBar,
+          body: Container(
+            alignment: Alignment.center,
             child: child,
           ),
         );

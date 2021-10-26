@@ -1,6 +1,6 @@
 import 'package:bmw_quiz_flutter/quiz/domain/entities/result.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/styles/quiz_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class ResultTitle extends StatelessWidget {
   final Result result;
@@ -16,25 +16,13 @@ class ResultTitle extends StatelessWidget {
           Text(
             '${result.percentage.toStringAsFixed(1)}%',
             textAlign: TextAlign.center,
-            style: GoogleFonts.exo(
-              textStyle: const TextStyle(
-                fontSize: 60,
-                color: Colors.black,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
+            style: QuizStyles().resultPercentageStyle,
           ),
           const SizedBox(height: 10),
           Text(
             result.message,
             textAlign: TextAlign.center,
-            style: GoogleFonts.exo(
-              textStyle: const TextStyle(
-                fontSize: 40,
-                color: Colors.black,
-                fontWeight: FontWeight.w700,
-              ),
-            ),
+            style: QuizStyles().resultMessageStyle,
           ),
         ],
       ),
