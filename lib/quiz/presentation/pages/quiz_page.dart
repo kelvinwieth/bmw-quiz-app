@@ -16,6 +16,9 @@ class QuizPage extends StatelessWidget {
 
         if (state is InitialState) {
           context.read<QuizCubit>().start();
+          child = const Center(
+            child: CircularProgressIndicator(),
+          );
         }
 
         if (state is LoadingState) {
