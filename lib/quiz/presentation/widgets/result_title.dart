@@ -16,13 +16,13 @@ class ResultTitle extends StatelessWidget {
           Text(
             '${result.percentage.toStringAsFixed(1)}%',
             textAlign: TextAlign.center,
-            style: QuizStyles().resultPercentageStyle,
+            style: QuizStyles().resultPercentageTextStyle,
           ),
           const SizedBox(height: 10),
           Text(
             result.message,
             textAlign: TextAlign.center,
-            style: QuizStyles().resultMessageStyle,
+            style: QuizStyles().resultMessageTextStyle,
           ),
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_cubit.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_state.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/styles/quiz_styles.dart';
+import 'package:bmw_quiz_flutter/quiz/presentation/views/loading_view.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/views/question_view.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/views/result_view.dart';
 import 'package:flutter/material.dart';
@@ -18,13 +19,13 @@ class QuizPage extends StatelessWidget {
         if (state is InitialState) {
           context.read<QuizCubit>().start();
           child = const Center(
-            child: CircularProgressIndicator(),
+            child: QuizLoadingIndicator(),
           );
         }
 
         if (state is LoadingState) {
           child = const Center(
-            child: CircularProgressIndicator(),
+            child: QuizLoadingIndicator(),
           );
         }
 
@@ -49,10 +50,10 @@ class QuizPage extends StatelessWidget {
             child: child,
             decoration: BoxDecoration(
               image: DecorationImage(
-                  image: const AssetImage('images/bmw.jpg'),
+                  image: const AssetImage('images/bmw2.jpg'),
                   fit: BoxFit.cover,
                   colorFilter: ColorFilter.mode(
-                    Colors.white.withOpacity(0.15),
+                    Colors.white.withOpacity(0.3),
                     BlendMode.dstATop,
                   )),
             ),

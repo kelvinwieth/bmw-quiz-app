@@ -1,6 +1,6 @@
+import 'package:bmw_quiz_flutter/quiz/presentation/styles/quiz_styles.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class QuestionOptionButton extends StatelessWidget {
   final String option;
@@ -20,20 +20,9 @@ class QuestionOptionButton extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           option,
-          style: GoogleFonts.exo(
-            textStyle: const TextStyle(
-              fontSize: 22,
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-              fontStyle: FontStyle.italic,
-            ),
-          ),
+          style: QuizStyles().optionButtonTextStyle,
         ),
-        style: ElevatedButton.styleFrom(
-          primary: Colors.grey.shade200,
-          padding: const EdgeInsets.all(12),
-          elevation: 0,
-        ),
+        style: QuizStyles().questionOptionButtonStyle,
       ),
     );
   }
