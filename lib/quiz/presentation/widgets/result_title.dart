@@ -14,7 +14,7 @@ class ResultTitle extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            '${result.percentage.toStringAsFixed(1)}%',
+            '${result.percentage.toStringAsFixed(0)}%',
             textAlign: TextAlign.center,
             style: QuizStyles().resultPercentageTextStyle,
           ),

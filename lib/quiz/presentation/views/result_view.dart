@@ -21,15 +21,13 @@ class ResultView extends StatelessWidget {
           ElevatedButton(
             onPressed: () => BlocProvider.of<QuizCubit>(context).start(),
             child: Padding(
-              padding: const EdgeInsets.all(6),
+              padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 30),
               child: Text(
                 'Reiniciar',
-                style: QuizStyles().restartTextStyle,
+                style: QuizStyles().optionButtonTextStyle,
               ),
             ),
-            style: ElevatedButton.styleFrom(
-              primary: Colors.black,
-            ),
+            style: QuizStyles().questionOptionButtonStyle,
           ),
         ],
       ),
