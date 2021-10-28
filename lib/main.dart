@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:bmw_quiz_flutter/quiz/infra/repositories/quiz_repository.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/cubit/quiz_cubit.dart';
 import 'package:bmw_quiz_flutter/quiz/presentation/pages/quiz_page.dart';
@@ -14,7 +14,7 @@ void main() {
 class BMWQuizApp extends StatelessWidget {
   final QuizRepository repository;
   BMWQuizApp({Key? key})
-      : repository = QuizRepository(),
+      : repository = QuizRepository(isDeviceBrowser: kIsWeb),
         super(key: key);
 
   @override

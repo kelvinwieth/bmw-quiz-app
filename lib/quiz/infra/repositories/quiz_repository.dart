@@ -7,7 +7,10 @@ import 'package:bmw_quiz_flutter/quiz/infra/datasources/dtos/result_request.dart
 import 'package:bmw_quiz_flutter/quiz/infra/datasources/quiz_api.dart';
 
 class QuizRepository implements IQuizRepository {
-  var quizApi = QuizApi();
+  QuizApi quizApi;
+
+  QuizRepository({required isDeviceBrowser})
+      : quizApi = QuizApi(isDeviceBrowser: isDeviceBrowser);
 
   @override
   Future<Quiz> getQuizAsync() async {

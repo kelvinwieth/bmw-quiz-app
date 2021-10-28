@@ -5,7 +5,13 @@ import 'package:bmw_quiz_flutter/quiz/infra/datasources/dtos/result_response.dar
 import 'package:http/http.dart' as http;
 
 class QuizApi {
-  var baseUrl = 'https://10.0.2.2:5001/api/Quiz';
+  var baseUrl = 'http://10.0.2.2:5000/api/Quiz';
+
+  QuizApi({required bool isDeviceBrowser}) {
+    if (isDeviceBrowser) {
+      baseUrl = 'http://localhost:5000/api/Quiz';
+    }
+  }
 
   Future<List<QuestionResponse>> getQuestionsAsync() async {
     var url = Uri.parse(baseUrl);
@@ -13,7 +19,9 @@ class QuizApi {
 
     var decodedBody = jsonDecode(response.body) as List;
 
-    return decodedBody.map((item) => QuestionResponse.fromMap(item)).toList();
+    return Future.delayed(const Duration(seconds: 3), () {
+      return decodedBody.map((item) => QuestionResponse.fromMap(item)).toList();
+    });
   }
 
   Future<ResultResponse> getResultAsync(ResultRequest request) async {
