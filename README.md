@@ -16,5 +16,5 @@
 ### Run mobile app
 - To run the mobile version, [connect to an Android emulator](https://developer.android.com/studio/run/emulator-commandline), open a CLI in the project folder, and run `flutter run .lib\main.dart`. Build may take a few minutes.
 
-### About
-- This project is a technical challenge proposed by [Zallpy](https://zallpy.com/) intership program, Zallpy Academy.
+## About
+This project is a technical challenge proposed by [Zallpy](https://zallpy.com/) intership program, Zallpy Academy.
